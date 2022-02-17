@@ -27,11 +27,16 @@ document.getElementById('calculate-button').addEventListener('click', function (
 
     //total expenses
     const totalExpensesAmount = foodAmount + rentAmount + clothesAmount;
-    // console.log(totalExpensesAmount);
+
 
     //update total expenses
     const totalExpenses = document.getElementById('total-expense');
     totalExpenses.innerText = totalExpensesAmount;
+
+    // error handle 
+    if (totalExpensesAmount > incomeAmount) {
+        return alert('You do not have enough money for expence');
+    }
     //update balance
     const updateBalance = document.getElementById('balance');
     const updateTotalBalance = incomeAmount - totalExpensesAmount;
