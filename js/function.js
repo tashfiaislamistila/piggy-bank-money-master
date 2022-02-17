@@ -5,7 +5,10 @@ function getInputValue(idInput) {
     const input = document.getElementById(idInput);
     const inputAmountText = input.value;
     const inputAmount = parseFloat(inputAmountText);
-
+    //error handle
+    if (isNaN(inputAmount) || inputAmount < 0) {
+        return alert('Please input valid amount of money in number format');
+    }
     return inputAmount;
 }
 
@@ -45,6 +48,11 @@ document.getElementById('calculate-button').addEventListener('click', function (
         const updatSavingAmount = (savePercentageAmount * incomeAmount) / 100;
         // console.log(updatSavingAmount);
         savingAmount.innerText = updatSavingAmount;
+
+        // error handle 
+        if (updateTotalBalance < updatSavingAmount) {
+            return alert('You do not have enough money');
+        }
 
         //Remaining Balance
         const remainingBalance = document.getElementById('remaining-balance');
