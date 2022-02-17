@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Verily Serif Mono
+Author: Stephen G. Hartke
+Url: http://www.fontsquirrel.com/fonts/verily-serif-mono
+
+Font: Agané
+Author: Danilo De Marco
+Url: https://www.fontsquirrel.com/fonts/agane
