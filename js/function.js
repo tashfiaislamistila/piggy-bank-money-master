@@ -1,29 +1,26 @@
 
-//for calculate income
-//for income
+//for function
+
+function getInputValue(idInput) {
+    const input = document.getElementById(idInput);
+    const inputAmountText = input.value;
+    const inputAmount = parseFloat(inputAmountText);
+
+    return inputAmount;
+}
+
 document.getElementById('calculate-button').addEventListener('click', function () {
-    const incomeInput = document.getElementById('income-input');
-    const incomeAmountText = incomeInput.value;
-    const incomeAmount = parseFloat(incomeAmountText);
-    // console.log(incomeAmount);
+    //for income
+    const incomeAmount = getInputValue('income-input');
 
     //for food
-    const foodInput = document.getElementById('food-input');
-    const foodAmountText = foodInput.value;
-    const foodAmount = parseFloat(foodAmountText);
-    // console.log(foodAmount);
+    const foodAmount = getInputValue('food-input');
 
     //for rent
-    const rentInput = document.getElementById('rent-input');
-    const rentAmountText = rentInput.value;
-    const rentAmount = parseFloat(rentAmountText);
-    // console.log(rentAmount);
+    const rentAmount = getInputValue('rent-input');
 
     //for clothes
-    const clothesInput = document.getElementById('clothes-input');
-    const clothesAmountText = clothesInput.value;
-    const clothesAmount = parseFloat(clothesAmountText);
-    // console.log(clothesAmount);
+    const clothesAmount = getInputValue('clothes-input');
 
     //total expenses
     const totalExpensesAmount = foodAmount + rentAmount + clothesAmount;
@@ -37,17 +34,18 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const updateTotalBalance = incomeAmount - totalExpensesAmount;
     updateBalance.innerText = updateTotalBalance;
     // console.log(totalBalance);
+
     //for 20% Saving Amount
     document.getElementById('save-button').addEventListener('click', function () {
-        const savePercentageInput = document.getElementById('save-input');
-        const savePercentageInputText = savePercentageInput.value;
-        const savePercentageAmount = parseFloat(savePercentageInputText);
-        // console.log(savePercentageAmount);
+        const savePercentageAmount = getInputValue('save-input');
+
+
         //calculate savings
         const savingAmount = document.getElementById('saving-amount');
         const updatSavingAmount = (savePercentageAmount * incomeAmount) / 100;
         // console.log(updatSavingAmount);
         savingAmount.innerText = updatSavingAmount;
+
         //Remaining Balance
         const remainingBalance = document.getElementById('remaining-balance');
         const updateremainingBalance = updateTotalBalance - updatSavingAmount;
