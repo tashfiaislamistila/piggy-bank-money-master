@@ -8,8 +8,8 @@ document.getElementById('calculate-button').addEventListener('click', function (
     // console.log(incomeAmount);
 
     //for food
-    const foodExpenses = document.getElementById('food-input');
-    const foodAmountText = foodExpenses.value;
+    const foodInput = document.getElementById('food-input');
+    const foodAmountText = foodInput.value;
     const foodAmount = parseFloat(foodAmountText);
     // console.log(foodAmount);
 
@@ -37,5 +37,16 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const updateTotalBalance = incomeAmount - totalExpensesAmount;
     updateBalance.innerText = updateTotalBalance;
     // console.log(totalBalance);
-
+    //for 20% Saving Amount
+    document.getElementById('save-button').addEventListener('click', function () {
+        const savePercentageInput = document.getElementById('save-input');
+        const savePercentageInputText = savePercentageInput.value;
+        const savePercentageAmount = parseFloat(savePercentageInputText);
+        // console.log(savePercentageAmount);
+        //calculate savings
+        const savingAmount = document.getElementById('saving-amount');
+        const updatSavingAmount = (savePercentageAmount * incomeAmount) / 100;
+        // console.log(updatSavingAmount);
+        savingAmount.innerText = updatSavingAmount;
+    });
 });
