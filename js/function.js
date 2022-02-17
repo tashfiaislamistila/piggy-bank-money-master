@@ -1,10 +1,3 @@
-/* const calculateBtn = document.getElementById('calculate-button')
-const saveBtn = document.getElementById('save-button')
-const totalExpense = document.getElementById('total-expense')
-const balance = document.getElementById('balance')
-const savingAmount = document.getElementById('saving-amount')
-const remainingBalance = document.getElementById('remaining-balance')
- */
 
 //for calculate income
 //for income
@@ -33,12 +26,16 @@ document.getElementById('calculate-button').addEventListener('click', function (
     // console.log(clothesAmount);
 
     //total expenses
-    const totalExpensesText = foodAmount + rentAmount + clothesAmount;
-    const totalExpenses = parseFloat(totalExpensesText);
-    console.log('totalExpenses', totalExpenses);
+    const totalExpensesAmount = foodAmount + rentAmount + clothesAmount;
+    // console.log(totalExpensesAmount);
 
     //update total expenses
-
-
+    const totalExpenses = document.getElementById('total-expense');
+    totalExpenses.innerText = totalExpensesAmount;
+    //update balance
+    const updateBalance = document.getElementById('balance');
+    const updateTotalBalance = incomeAmount - totalExpensesAmount;
+    updateBalance.innerText = updateTotalBalance;
+    // console.log(totalBalance);
 
 });
