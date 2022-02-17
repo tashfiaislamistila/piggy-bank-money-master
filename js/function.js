@@ -48,5 +48,10 @@ document.getElementById('calculate-button').addEventListener('click', function (
         const updatSavingAmount = (savePercentageAmount * incomeAmount) / 100;
         // console.log(updatSavingAmount);
         savingAmount.innerText = updatSavingAmount;
+        //Remaining Balance
+        const remainingBalance = document.getElementById('remaining-balance');
+        const updateremainingBalance = updateTotalBalance - updatSavingAmount;
+        remainingBalance.innerText = updateremainingBalance;
+
     });
 });
